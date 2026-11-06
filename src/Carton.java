@@ -1,9 +1,9 @@
 import java.io.PrintWriter;
 import java.util.Random;
 import java.util.Scanner;
- 
+
 public class Carton {
- 
+
     // Solo int: los huecos valen 0
     private int[][] numeros = new int[3][9];
     private int[][] marcados = new int[3][9]; // 0 = sin marcar, 1 = marcado
@@ -63,10 +63,34 @@ public class Carton {
     }
     // ----------------------------
 
+    // ---------- BINGO ----------
+    private boolean bingoResuelto = false; // true = ya se ha preguntado (o ya lo canto otro)
+
+    // true si todos los numeros del carton estan marcados y aun no se ha resuelto
+    public boolean bingoCompletado() {
+        if (bingoResuelto) {
+            return false;
+        }
+        for (int f = 0; f < 3; f++) {
+            for (int c = 0; c < 9; c++) {
+                if (numeros[f][c] != 0 && marcados[f][c] == 0) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    // Se llama despues de la pregunta (solo hay un intento)
+    public void resolverBingo() {
+        bingoResuelto = true;
+    }
+    // ----------------------------
+
     // Constructor 1: genera un carton aleatorio (lo usa el anfitrion)
     public Carton() {
         Random rnd = new Random();
- 
+
         for (int f = 0; f < 3; f++) {
             for (int c = 0; c < 9; c++) {
                 numeros[f][c] = 0;
@@ -76,7 +100,7 @@ public class Carton {
             int puestos = 0;
             while (puestos < 5) {
                 int c = rnd.nextInt(9);
- 
+
                 if (numeros[f][c] == 0) {
                     int num;
                     do {
@@ -88,7 +112,7 @@ public class Carton {
             }
         }
     }
- 
+
     // Constructor 2: lee un carton que ya esta escrito en un fichero (lo usa el jugador)
     // Lee 27 numeros (3 filas de 9)
     public Carton(Scanner lector) {
@@ -99,7 +123,7 @@ public class Carton {
         }
         lector.nextLine(); // pasar al final de la ultima linea
     }
- 
+
     private boolean estaEnColumna(int num, int c) {
         for (int f = 0; f < 3; f++) {
             if (numeros[f][c] == num) {
@@ -108,7 +132,7 @@ public class Carton {
         }
         return false;
     }
- 
+
     // Escribe el carton en un fichero: 3 lineas con 9 numeros cada una
     public void escribir(PrintWriter pw) {
         for (int f = 0; f < 3; f++) {
@@ -118,11 +142,11 @@ public class Carton {
             pw.println();
         }
     }
- 
+
     public int[][] getNumeros() {
         return numeros;
     }
- 
+
     public void mostrar() {
         for (int f = 0; f < 3; f++) {
             for (int c = 0; c < 9; c++) {
@@ -137,7 +161,7 @@ public class Carton {
             System.out.println();
         }
     }
- 
+
     public static void main(String[] args) {
         Carton carton = new Carton();
         carton.mostrar();

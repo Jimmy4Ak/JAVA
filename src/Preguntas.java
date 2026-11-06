@@ -50,7 +50,7 @@ public class Preguntas {
 
     public static void main(String[] args) {
         Preguntas preguntas=new Preguntas();
-        preguntas.cargar("preguntas.txt");
+        preguntas.cargar("C:/bingo/preguntas.txt");
         Scanner teclado=new Scanner(System.in);
         if (preguntas.preguntar(teclado)) {
             System.out.println("Correcta, línea aprobada");
