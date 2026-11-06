@@ -1,0 +1,100 @@
+¿Qué significan las siglas ASG en el ámbito de las organizaciones empresariales?
+Acciones, Sindicatos y Gobierno
+Ambientales, Sociales y de Gobernanza
+Alianzas Sostenibles Globales
+2
+¿Cuál de los siguientes elementos forma parte de las llamadas "5P" del desarrollo sostenible?
+Personas
+Producción
+Poder
+1
+¿Cómo se denominan los títulos de emisión de deuda destinados exclusivamente a financiar proyectos socialmente responsables?
+Bonos verdes y sociales
+Fondos de inversión de riesgo
+Préstamos institucionales
+1
+Dentro de las estrategias de inversión socialmente responsable (ISR), ¿qué implica la política de "Exclusión"?
+Invertir únicamente en empresas de tabaco y juego
+No considerar organizaciones empresariales o industrias que operan en sectores poco éticos
+Obligar a las empresas a cumplir tratados internacionales de comercio
+2
+En el contexto de los stakeholders o grupos de interés de una empresa, ¿cuál de los siguientes colectivos se considera jurídicamente el propietario?
+Las personas u otras empresas que poseen acciones significativas, mayoritarias o son fundadores
+Los sindicatos encargados de mejorar las condiciones laborales
+Las instituciones públicas encargadas de recaudar los impuestos
+1
+¿Qué significan las siglas KPI en el ámbito de la medición de la sostenibilidad?
+Key Performance Indicator (Indicadores Clave de Desempeño)
+Knowledge Process Infrastructure
+Kilómetros por Inversión
+1
+¿Cuál de los siguientes indicadores se destaca como uno de los cinco más eficaces para medir el impacto ambiental y el cambio climático?
+La huella de carbono
+La rentabilidad empresarial
+El volumen de negocio
+1
+¿Qué número de ODS tiene como objetivo poner fin a la pobreza en todas sus formas en todo el mundo?
+ODS 1
+ODS 5
+ODS 13
+1
+¿Qué número de ODS busca garantizar una educación inclusiva, equitativa y de calidad?
+ODS 2
+ODS 4
+ODS 8
+2
+¿Qué número de ODS tiene como objetivo adoptar medidas urgentes para combatir el cambio climático?
+ODS 7
+ODS 11
+ODS 13
+3
+¿Cómo se llama el conjunto de prácticas para que la tecnología contamine menos?
+Green IT o Informática Verde
+Programación en red
+Compilación limpia
+1
+¿Qué significan las siglas RAEE al reciclar material informático?
+Red de Archivos Electrónicos
+Residuos de Aparatos Eléctricos y Electrónicos
+Rendimiento Alto en Equipos
+2
+¿Por qué es clave escribir código eficiente en programación?
+Para que el CPU gaste menos energía
+Para que compile más rápido el primer día
+Para que las variables ocupen un giga
+1
+¿Qué es la obsolescencia programada?
+Un error al compilar código
+Diseñar aparatos con vida útil corta a propósito
+Un sistema que se actualiza solo
+2
+¿Qué práctica de economía circular usas al mejorar un PC viejo con un SSD en vez de tirarlo?
+Alargamiento de la vida útil del hardware
+Formateo a bajo nivel
+Eliminación de componentes
+1
+¿Cómo ayuda el teletrabajo al pilar ambiental?
+Gastando menos luz en casa
+Reduciendo la contaminación por desplazamientos
+Eliminando la electricidad doméstica
+2
+¿Cómo se le llama a la acumulación masiva de equipos tecnológicos desechados?
+Basura electrónica o e-waste
+Spam de red local
+Desbordamiento de pila
+1
+¿Por qué se critica a las blockchains tradicionales en sostenibilidad?
+Porque imprimen mucho papel
+Por el enorme consumo eléctrico de sus servidores
+Porque rompen cables de red
+2
+¿Cómo aplica una empresa informática el criterio Social (S de ASG)?
+Fomentando la conciliación y buen clima laboral
+Obligando a turnos de 16 horas
+Comprando sillas baratas
+1
+¿Qué ventaja ambiental tiene usar Cloud Computing frente a servidores locales?
+Los datos se suben solos sin código
+Se optimizan recursos compartidos y se gasta menos energía
+El PC deja de calentarse
+2
