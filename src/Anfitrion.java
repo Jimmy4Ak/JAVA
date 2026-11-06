@@ -20,14 +20,14 @@ public class Anfitrion {
         pw = new PrintWriter(RUTA + "bolas.txt");
         pw.close();
 
-        // Borrar el aviso de la linea anterior
+        // Borrar los avisos de la partida anterior
         new File(RUTA + "linea_conseguida.txt").delete();
 
-        // Borrar el aviso del bingo anterior
         File archivoBingo = new File(RUTA + "bingo_conseguido.txt");
         archivoBingo.delete();
 
         new File(RUTA + "repartidos.txt").delete();
+        new File(RUTA + "asignaciones.txt").delete();
 
         String[] nombres = new String[50];
 
@@ -148,21 +148,25 @@ public class Anfitrion {
         System.out.println();
         System.out.println("Pulsa Enter para sacar la bola...");
 
-        // Sacar las bolas
+        // Sacar bolas hasta que un jugador consiga el bingo
         for (int i = 0; i < 90; i++) {
 
-            // Comprobar si alguien ha conseguido el bingo
+            System.out.println("----------------------------------------");
+
+            // Esperar al Enter, pero parar enseguida si alguien gana
+            while (System.in.available() == 0 && !archivoBingo.exists()) {
+                Thread.sleep(200);
+            }
+
             if (archivoBingo.exists()) {
 
                 mostrarGanador(archivoBingo);
                 break;
             }
 
-            System.out.println("----------------------------------------");
-
             sc.nextLine();
 
-            // Volver a comprobar después de pulsar Enter
+            // Volver a comprobar despues de pulsar Enter
             if (archivoBingo.exists()) {
 
                 mostrarGanador(archivoBingo);
@@ -201,28 +205,37 @@ public class Anfitrion {
     // Mostrar el ganador
     public static void mostrarGanador(File archivoBingo) {
 
+        String ganador = "";
+
         try {
 
-            Scanner lector = new Scanner(archivoBingo);
+            // El fichero puede estar recien creado y aun vacio: reintentar un poco
+            for (int i = 0; i < 30 && ganador.isEmpty(); i++) {
 
-            if (lector.hasNextLine()) {
+                Scanner lector = new Scanner(archivoBingo);
 
-                String ganador = lector.nextLine();
+                if (lector.hasNextLine()) {
+                    ganador = lector.nextLine().trim();
+                }
 
-                System.out.println();
-                System.out.println("----------------------------------------");
-                System.out.println("¡BINGO!");
-                System.out.println("GANADOR: " + ganador);
-                System.out.println("LA PARTIDA HA TERMINADO.");
-                System.out.println("----------------------------------------");
+                lector.close();
+
+                if (ganador.isEmpty()) {
+                    Thread.sleep(100);
+                }
             }
-
-            lector.close();
 
         } catch (Exception e) {
 
             System.out.println("No se ha podido leer el ganador.");
         }
+
+        System.out.println();
+        System.out.println("----------------------------------------");
+        System.out.println("¡BINGO!");
+        System.out.println("GANADOR: " + ganador);
+        System.out.println("LA PARTIDA HA TERMINADO.");
+        System.out.println("----------------------------------------");
     }
 
     public static void mostrarTablero(boolean[] salio) {
