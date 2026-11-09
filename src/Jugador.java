@@ -16,6 +16,7 @@ public class Jugador {
         // Registrar nombre
         System.out.print("Tu nombre: ");
         String nombre = teclado.nextLine();
+        System.out.print("Quedan (s): ");
 
         PrintWriter pw = new PrintWriter(
                 new FileWriter(RUTA + "jugadores.txt", true));
@@ -25,27 +26,33 @@ public class Jugador {
 
         // NUEVO: esperar a que se repartan los cartones, mostrando la cuenta regresiva
         int ultimo = -1;
+
         while (!new File(RUTA + "repartidos.txt").exists()) {
 
             File fc = new File(RUTA + "cuenta.txt");
 
             if (fc.exists()) {
+
                 Scanner cuenta = new Scanner(fc);
 
                 // hasNextInt por si el anfitrion esta reescribiendo el fichero justo ahora
                 if (cuenta.hasNextInt()) {
+
                     int restante = cuenta.nextInt();
 
                     if (restante != ultimo) {
-                        System.out.print("\rQuedan " + restante + " s para cerrar el registro...  ");
+                    	
+                        System.out.print(restante + " ");
                         ultimo = restante;
                     }
                 }
+
                 cuenta.close();
             }
 
             Thread.sleep(500);
         }
+
         System.out.println();
         System.out.println("Repartiendo cartones...");
 
