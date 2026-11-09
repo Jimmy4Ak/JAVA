@@ -23,10 +23,31 @@ public class Jugador {
         pw.println(nombre);
         pw.close();
 
-        // Esperar a que se repartan los cartones
+        // NUEVO: esperar a que se repartan los cartones, mostrando la cuenta regresiva
+        int ultimo = -1;
         while (!new File(RUTA + "repartidos.txt").exists()) {
-            Thread.sleep(1000);
+
+            File fc = new File(RUTA + "cuenta.txt");
+
+            if (fc.exists()) {
+                Scanner cuenta = new Scanner(fc);
+
+                // hasNextInt por si el anfitrion esta reescribiendo el fichero justo ahora
+                if (cuenta.hasNextInt()) {
+                    int restante = cuenta.nextInt();
+
+                    if (restante != ultimo) {
+                        System.out.print("\rQuedan " + restante + " s para cerrar el registro...  ");
+                        ultimo = restante;
+                    }
+                }
+                cuenta.close();
+            }
+
+            Thread.sleep(500);
         }
+        System.out.println();
+        System.out.println("Repartiendo cartones...");
 
         // Leer el carton asignado
         Scanner lector = new Scanner(
